@@ -4,6 +4,18 @@ import Booking from '../models/Booking.js'
 const required = ['name','phone','company','email','eventName','requirement','preferredDate','preferredTime']
 
 export async function createBooking(req, res) {
+  // TEMP DEBUG - remove after testing
+  console.log("EMAIL_USER:", process.env.EMAIL_USER);
+  console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
+  console.log("PASS LENGTH:", process.env.EMAIL_PASS?.length);
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
   const missing = required.filter(key => !String(req.body[key] || '').trim())
 
   if (missing.length) return res.status(400).json({ message: `Missing required fields: ${missing.join(', ')}` })

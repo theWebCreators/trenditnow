@@ -6,7 +6,7 @@ const WaterLabel = lazy(() => import('./pages/WaterLabel'))
 
 export default function App() {
   const location = useLocation()
-  return <AnimatePresence mode="wait"><Suspense fallback={<div className="page-loader">XYZ</div>}><Routes location={location} key={location.pathname}>
+  return <AnimatePresence mode="wait"><Suspense fallback={<div className="page-loader">TrendItNow</div>}><Routes location={location} key={location.pathname}>
     <Route path="/" element={<Home />} />
     <Route path="/ideation/water-label" element={<WaterLabel />} />
   </Routes></Suspense></AnimatePresence>

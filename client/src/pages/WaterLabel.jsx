@@ -2,12 +2,224 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Header, Footer, Fade } from '../components/Layout'
 import BookingForm from '../components/BookingForm'
-const flow=['Brand','Label Design','Bottle Production','Campus Distribution','Brand Recall']
-export default function WaterLabel(){return <motion.main className="site-shell case-study" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}><Header/><section className="case-hero"><Link className="back-link" to="/">← Back to ideas</Link><p className="eyebrow">Ideation / 01</p><h1>Make every<br/><em>sip</em> seen.</h1><p>Custom water bottle label advertising for college festivals and high-footfall campus events.</p><div className="case-bottle"><div className="case-cap"/><div className="case-label"><span>BRAND NAME</span><b>ON<br/>CAMPUS</b><small>EVENT EDITION · 500 ML</small></div></div></section>
-<section className="case-section problem"><Fade><p className="eyebrow">The problem</p><h2>During college festivals, 8,000–9,000 students buy or receive water.</h2><p>The only branding visible is usually the bottled water company. For every other brand in the room, that attention disappears.</p></Fade><div className="image-placeholder crowd"><span>Festival crowd<br/>placeholder</span></div></section>
-<section className="case-section idea"><Fade><p className="eyebrow">Our idea</p><h2>Replace the entire bottle label with the sponsoring company’s branding.</h2></Fade><Fade><div className="idea-rule"><p>The water company still supplies the bottle. The sponsor owns the visual surface.</p><span>1 bottle<br/>many moments</span></div></Fade></section>
-<section className="case-section works"><Fade><p className="eyebrow">Why it works</p><h2>A useful thing is<br/>hard to ignore.</h2><p>Custom-labelled bottles create repeated exposure: attendees hold them throughout an event and often carry them afterward. In a crowd, that practical utility turns a label into a visible, shareable object.</p></Fade><Fade className="benefit-list"><span>Repeated impressions</span><span>Social media visibility</span><span>Photos & organic exposure</span><span>Practical utility</span><span>QR code support</span></Fade></section>
-<section className="event-flow"><p className="eyebrow">Event flow</p><div>{flow.map((x,i)=><span key={x}>{x}{i<flow.length-1&&<i>↓</i>}</span>)}</div></section>
-<section className="case-section gallery"><div className="image-placeholder students"><span>Students holding bottles<br/>placeholder</span></div><Fade><p className="eyebrow">A small surface. A big role.</p><h2>Every attendee becomes a walking impression.</h2><p>Bottles appear in photos, move through the venue, and give campaigns a natural home for a QR code or clear next step.</p></Fade></section>
-<section className="process"><p className="eyebrow">From thought to crowd</p>{['Discovery','Ideation','Production','Campus execution'].map((x,i)=><Fade className="process-row" key={x}><span>0{i+1}</span><h3>{x}</h3><p>{['The brand, the event, and what the audience will actually respond to.','A concept designed around the moment—not dropped onto it.','Label-ready artwork and supplier coordination with considered details.','The bottle arrives in the right hands, at the right point in the day.'][i]}</p></Fade>)}</section>
-<section id="schedule" className="schedule"><div className="schedule-title"><p className="eyebrow">Want this at your event?</p><h2>Let’s talk<br/>placement.</h2><p>We’ll work through feasibility, design, and the kind of campus moment worth making.</p></div><BookingForm/></section><Footer/></motion.main>}
+
+const flow = [
+  'Brand',
+  'Label Design',
+  'Bottle Production',
+  'Campus Distribution',
+  'Brand Recall'
+]
+
+export default function WaterLabel() {
+  return (
+    <motion.main
+      className="site-shell case-study"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <Header />
+
+      <section className="case-hero">
+        <Link className="back-link" to="/">
+          ← Back to ideas
+        </Link>
+
+        <p className="eyebrow">Ideation / 01</p>
+
+        <h1>
+          Make every
+          <br />
+          <em>sip</em> seen.
+        </h1>
+
+        <p>
+          Custom water bottle label advertising for college festivals and
+          high-footfall campus events.
+        </p>
+
+        <div className="case-bottle">
+          <div className="case-cap" />
+          <div className="case-label">
+            <span>BRAND NAME</span>
+            <b>
+              ON
+              <br />
+              CAMPUS
+            </b>
+            <small>EVENT EDITION · 500 ML</small>
+          </div>
+        </div>
+      </section>
+
+      <section className="case-section problem">
+        <Fade>
+          <p className="eyebrow">The problem</p>
+
+          <h2>
+            During college festivals, 8,000–9,000 students buy or receive
+            water.
+          </h2>
+
+          <p>
+            The only branding visible is usually the bottled water company.
+            For every other brand in the room, that attention disappears.
+          </p>
+        </Fade>
+
+        <div className="image-placeholder crowd">
+          <img
+            src="/idea1-before-after.png"
+            alt="Custom branded water bottles displayed at a college festival"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              display: 'block'
+            }}
+          />
+        </div>
+      </section>
+
+      <section className="case-section idea">
+        <Fade>
+          <p className="eyebrow">Our idea</p>
+
+          <h2>
+            Replace the entire bottle label with the sponsoring company’s
+            branding.
+          </h2>
+        </Fade>
+
+        <Fade>
+          <div className="idea-rule">
+            <p>
+              The water company still supplies the bottle.
+              The sponsor owns the visual surface.
+            </p>
+
+            <span>
+              1 bottle
+              <br />
+              many moments
+            </span>
+          </div>
+        </Fade>
+      </section>
+
+      <section className="case-section works">
+        <Fade>
+          <p className="eyebrow">Why it works</p>
+
+          <h2>
+            A useful thing is
+            <br />
+            hard to ignore.
+          </h2>
+
+          <p>
+            Custom-labelled bottles create repeated exposure: attendees hold
+            them throughout an event and often carry them afterward. In a crowd,
+            that practical utility turns a label into a visible, shareable
+            object.
+          </p>
+        </Fade>
+
+        <Fade className="benefit-list">
+          <span>Repeated impressions</span>
+          <span>Social media visibility</span>
+          <span>Photos & organic exposure</span>
+          <span>Practical utility</span>
+          <span>QR code support</span>
+        </Fade>
+      </section>
+
+      <section className="event-flow">
+        <p className="eyebrow">Event flow</p>
+
+        <div>
+          {flow.map((item, index) => (
+            <span key={item}>
+              {item}
+              {index < flow.length - 1 && <i>↓</i>}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="case-section gallery">
+        <div className="image-placeholder students">
+          <img
+            src="/idea1-event-table.png"
+            alt="Premium custom-labelled water bottle floating product mockup"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              display: 'block'
+            }}
+          />
+        </div>
+
+        <Fade>
+          <p className="eyebrow">A small surface. A big role.</p>
+
+          <h2>Every attendee becomes a walking impression.</h2>
+
+          <p>
+            Bottles appear in photos, move through the venue, and give campaigns
+            a natural home for a QR code or clear next step.
+          </p>
+        </Fade>
+      </section>
+
+      <section className="process">
+        <p className="eyebrow">From thought to crowd</p>
+
+        {[
+          'Discovery',
+          'Ideation',
+          'Production',
+          'Campus execution'
+        ].map((step, index) => (
+          <Fade className="process-row" key={step}>
+            <span>0{index + 1}</span>
+
+            <h3>{step}</h3>
+
+            <p>
+              {[
+                'The brand, the event, and what the audience will actually respond to.',
+                'A concept designed around the moment—not dropped onto it.',
+                'Label-ready artwork and supplier coordination with considered details.',
+                'The bottle arrives in the right hands, at the right point in the day.'
+              ][index]}
+            </p>
+          </Fade>
+        ))}
+      </section>
+
+      <section id="schedule" className="schedule">
+        <div className="schedule-title">
+          <p className="eyebrow">Want this at your event?</p>
+
+          <h2>
+            Let’s talk
+            <br />
+            placement.
+          </h2>
+
+          <p>
+            We’ll work through feasibility, design, and the kind of campus
+            moment worth making.
+          </p>
+        </div>
+
+        <BookingForm />
+      </section>
+
+      <Footer />
+    </motion.main>
+  )
+}

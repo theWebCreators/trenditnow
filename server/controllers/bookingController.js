@@ -2,10 +2,14 @@ import nodemailer from 'nodemailer'
 import Booking from '../models/Booking.js'
 
 const required = ['name','phone','company','email','eventName','requirement','preferredDate','preferredTime']
+
 export async function createBooking(req, res) {
   const missing = required.filter(key => !String(req.body[key] || '').trim())
+
   if (missing.length) return res.status(400).json({ message: `Missing required fields: ${missing.join(', ')}` })
+
   if (!/^\S+@\S+\.\S+$/.test(req.body.email)) return res.status(400).json({ message: 'Please provide a valid email address.' })
+
   try {
     const booking = await Booking.create(Object.fromEntries(required.map(key => [key, String(req.body[key]).trim()])))
     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
